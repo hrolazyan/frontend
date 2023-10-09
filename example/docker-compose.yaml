@@ -1,0 +1,21 @@
+version: "3"
+services:      
+  webserver:
+    container_name: webserver
+    build:
+      dockerfile: php.Dockerfile
+      context: .
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./src:/var/www/
+    environment:
+      VIRTUAL_HOST: example.com
+      LETSENCRYPT_HOST: example.com
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    driver: bridge
+    external: true
