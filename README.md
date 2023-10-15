@@ -28,7 +28,7 @@ mkdir /var/repo/frontend.git
 cd /var/repo/frontend.git/
 git init --bare
 cd hooks
-sudo nano post-receive
+nano post-receive
 ```
 Create a `post-receive` hook 
 ```sh
