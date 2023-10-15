@@ -49,10 +49,10 @@ push changes to the `live` remote
 git push live master
 ```
 
-### 5. Go to the source directory on the `host` and build with `docker-compose`
+### 5. Go to the source directory on the `host` and build with `docker compose`
 ```sh
 cd /frontend
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ### 6. Review the build
