@@ -33,7 +33,7 @@ nano post-receive
 Create a `post-receive` hook 
 ```sh
 #!/bin/sh
-git --work-tree=/frontend --git-dir=/var/repo/frontend.git checkout -f
+git --work-tree=/frontend --git-dir=/var/repo/frontend.git checkout -f main
 ```
 make the hook executable
 ```sh
