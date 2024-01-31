@@ -1,5 +1,5 @@
-### Prepare the `docker-compose.yaml` file configurations.
-Change the `DEFAULT_EMAIL` value to your email address.
+### Configuration
+Provide your email address for Let's Encrypt either by changing the `DEFAULT_EMAIL` value to your email address in the `docker-compose.yaml` file or by passing it as an environment variable through the command line, as shown in 5th step.
 ```yaml
 services:
     ...
@@ -52,7 +52,7 @@ git push live master
 ### 5. Go to the source directory on the `host` and build with `docker compose`
 ```sh
 cd /frontend
-docker compose up -d --build
+EMAIL=your_email_address docker compose up -d --build
 ```
 
 ### 6. Review the build
