@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    container_name: nginx
+    container_name: frontend
     image: nginxproxy/nginx-proxy
     restart: unless-stopped
     tty: true
@@ -17,21 +17,6 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-    networks:
-      - frontend
-
-  letsencrypt: 
-    container_name: letsencrypt
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    restart: unless-stopped
-    tty: true
-    volumes_from:
-      - nginx
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /var/docker/nginx/acme:/etc/acme.sh
-    environment:
-      DEFAULT_EMAIL: hrolazyan@gmail.com
     networks:
       - frontend
 
