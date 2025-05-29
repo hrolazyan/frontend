@@ -10,9 +10,9 @@ services:
       - 443:443
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - nginx-html:/usr/share/nginx/html
-      - nginx-certs:/etc/nginx/certs
-      - nginx-vhost:/etc/nginx/vhost.d
+      - ./html:/usr/share/nginx/html
+      - ./certs:/etc/nginx/certs
+      - ./vhost:/etc/nginx/vhost.d
     logging:
       options:
         max-size: "10m"
@@ -29,7 +29,7 @@ services:
       - nginx
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - nginx-acme:/etc/acme.sh
+      - ./acme:/etc/acme.sh
     environment:
       DEFAULT_EMAIL: hrolazyan@gmail.com
     networks:
@@ -39,9 +39,3 @@ networks:
   frontend:
     name: frontend
     driver: bridge
-
-volumes:
-  nginx-html:
-  nginx-certs:
-  nginx-vhost:
-  nginx-acme:

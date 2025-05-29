@@ -1,1 +1,6 @@
 *.log
+dev/*.crt
+dev/*.key
+certs/*.crt
+certs/*.key
+certs/*.pem

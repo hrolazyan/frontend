@@ -1,0 +1,30 @@
+[ req ]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+req_extensions = v3_req
+x509_extensions = v3_ca
+
+[ dn ]
+C = AM
+ST = Yerevan
+L = Yerevan
+O = local.host
+OU = local
+CN = local.host
+emailAddress = hrolazyan@gmail.com
+
+[ CA_default ]
+copy_extensions = copy
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+
+[ v3_ca ]
+subjectAltName = @alternate_names
+
+[ alternate_names ]
+DNS.1 = local.host
+DNS.2 = *.local.host
