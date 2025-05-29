@@ -8,9 +8,6 @@ DOMAIN="local.host"
 HOSTFILE="/etc/hosts"
 EMAIL="hrolazyan@gmail.com"
 
-git config --global user.name "hrolazyan"
-git config --global user.email $EMAIL
-
 printf "${Purple}docker compose.${Nc}\n"
 docker compose --file ./docker-compose.yaml down
 docker compose --file ./docker-compose.yaml build ${nocache}
