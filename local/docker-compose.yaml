@@ -1,4 +1,4 @@
-version: "3"
+name: frontend
 services:
   nginx:
     container_name: frontend
